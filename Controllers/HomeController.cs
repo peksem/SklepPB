@@ -1,19 +1,30 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using SklepPB.DAL;
 using SklepPB.Models;
 
 namespace SklepPB.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+
+        FilmsContext db;
+
+        public HomeController(FilmsContext db)
         {
-            return View();
+            this.db = db;
         }
 
-        public IActionResult Privacy()
+        public IActionResult Index()
         {
-            return View();
+            var categories = db.Categories.ToList();
+
+            return View(categories);
+        }
+
+        public IActionResult FooterSites(string name)
+        {
+            return View(name);
         }
 
     }
