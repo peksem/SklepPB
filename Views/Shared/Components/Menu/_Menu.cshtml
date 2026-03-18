@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Category>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
+        <ul class="navbar-nav">
+
+            @foreach (var category in Model)
+            {
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("CategoryFilms", "Films", new { categoryName = category.Name })">@category.Name</a>
+                </li>
+            }
+
+        </ul>
+    </div>
+</nav>

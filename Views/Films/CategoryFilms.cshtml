@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Film>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Tytuł</th>
+                <th>Reżyser</th>
+                <th>Cena</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var film in Model)
+            {
+                <tr>
+                    <td>@film.Title</td>
+                    <td>@film.Director</td>
+                    <td>@film.Price zł</td>
+                </tr>
+            }
+    </tbody>
+    </table>
