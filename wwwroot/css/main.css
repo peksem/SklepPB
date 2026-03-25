@@ -8,3 +8,8 @@
 .shop-footer a:hover {
     font-size: 1.7rem;
 }
+
+tbody a
+{
+    text-decoration: none;
+}
