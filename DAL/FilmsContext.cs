@@ -27,18 +27,19 @@ namespace SklepPB.DAL
                 new Category { Id = 6, Name = "Romance", Desc = "Film romantyczny" }
             };
 
+            
             var films = new List<Film>
             {
-                new Film { Id = 1, Title = "Inception", Director = "Christopher Nolan", Desc = "Film o snach", Price = 19.99m, CategoryId = 5 },
-                new Film { Id = 2, Title = "The Dark Knight", Director = "Christopher Nolan", Desc = "Film o Batmanie", Price = 14.99m, CategoryId = 1 },
-                new Film { Id = 3, Title = "Forrest Gump", Director = "Robert Zemeckis", Desc = "Historia życia Forresta Gumpa", Price = 9.99m, CategoryId = 3 },
-                new Film { Id = 4, Title = "The Conjuring", Director = "James Wan", Desc = "Film o duchach", Price = 12.99m, CategoryId = 4 },
-                new Film { Id = 5, Title = "The Hangover", Director = "Todd Phillips", Desc = "Komedia o wieczorze kawalerskim", Price = 8.99m, CategoryId = 2 },
-                new Film { Id = 6, Title = "Titanic", Director = "James Cameron", Desc = "Film o katastrofie Titanica", Price = 11.99m, CategoryId = 6 },
-                new Film { Id = 7, Title = "The Matrix", Director = "The Wachowskis", Desc = "Film o wirtualnej rzeczywistości", Price = 15.99m, CategoryId = 5 },
-                new Film { Id = 8, Title = "Gladiator", Director = "Ridley Scott", Desc = "Film o rzymskim gladiatorze", Price = 13.99m, CategoryId = 1 },
-                new Film { Id = 9, Title = "The Shawshank Redemption", Director = "Frank Darabont", Desc = "Film o więzieniu Shawshank", Price = 10.99m, CategoryId = 3 },
-                new Film { Id = 10, Title = "Get Out", Director = "Jordan Peele", Desc = "Horror o rasizmie", Price = 9.99m, CategoryId = 4 },
+                new Film { Id = 1, Title = "Inception", Director = "Christopher Nolan", Desc = "Film o snach", Price = 19.99m, CategoryId = 5, Poster = "1.png" },
+new Film { Id = 2, Title = "The Dark Knight", Director = "Christopher Nolan", Desc = "Film o Batmanie", Price = 14.99m, CategoryId = 1, Poster = "2.png" },
+new Film { Id = 3, Title = "Forrest Gump", Director = "Robert Zemeckis", Desc = "Historia życia Forresta Gumpa", Price = 9.99m, CategoryId = 3, Poster = "3.png" },
+new Film { Id = 4, Title = "The Conjuring", Director = "James Wan", Desc = "Film o duchach", Price = 12.99m, CategoryId = 4, Poster = "4.png" },
+new Film { Id = 5, Title = "The Hangover", Director = "Todd Phillips", Desc = "Komedia o wieczorze kawalerskim", Price = 8.99m, CategoryId = 2, Poster = "5.png" },
+new Film { Id = 6, Title = "Titanic", Director = "James Cameron", Desc = "Film o katastrofie Titanica", Price = 11.99m, CategoryId = 6, Poster = "6.png" },
+new Film { Id = 7, Title = "The Matrix", Director = "The Wachowskis", Desc = "Film o wirtualnej rzeczywistości", Price = 15.99m, CategoryId = 5, Poster = "7.png" },
+new Film { Id = 8, Title = "Gladiator", Director = "Ridley Scott", Desc = "Film o rzymskim gladiatorze", Price = 13.99m, CategoryId = 1, Poster = "8.png" },
+new Film { Id = 9, Title = "The Shawshank Redemption", Director = "Frank Darabont", Desc = "Film o więzieniu Shawshank", Price = 10.99m, CategoryId = 3, Poster = "9.png" },
+new Film { Id = 10, Title = "Get Out", Director = "Jordan Peele", Desc = "Horror o rasizmie", Price = 9.99m, CategoryId = 4, Poster = "10.png" },
                 // ===== ACTION (CategoryId = 1) =====
                 new Film { Id = 11, Title = "Mad Max: Fury Road", Director = "George Miller", Desc = "Postapokaliptyczny pościg przez pustynię", Price = 16.99m, CategoryId = 1 },
                 new Film { Id = 12, Title = "John Wick", Director = "Chad Stahelski", Desc = "Były zabójca wraca do gry", Price = 14.99m, CategoryId = 1 },
@@ -111,7 +112,7 @@ namespace SklepPB.DAL
                 new Film { Id = 69, Title = "Crazy, Stupid, Love", Director = "Glenn Ficarra & John Requa", Desc = "Miłosne perypetie kilku par", Price = 9.99m, CategoryId = 6 },
                 new Film { Id = 70, Title = "Love Actually", Director = "Richard Curtis", Desc = "Kilka historii miłosnych", Price = 10.49m, CategoryId = 6 },
             };
-
+            
             modelBuilder.Entity<Category>().HasData(categories);
             modelBuilder.Entity<Film>().HasData(films);
         }

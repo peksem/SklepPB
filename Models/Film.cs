@@ -18,6 +18,8 @@ namespace SklepPB.Models
 
         public decimal? Price { get; set; }
 
+        public string? Poster { get; set; }
+
         [ForeignKey("Category")]
         public int CategoryId { get; set; }
 
