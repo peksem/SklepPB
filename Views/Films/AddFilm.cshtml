@@ -1,0 +1,40 @@
+﻿@model AddFilmViewModel
+
+@using (Html.BeginForm("AddFilm", "Films", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="form-group">
+    @Html.LabelFor(m => m.Film.Title, "Podaj tytuł: ")
+    @Html.TextBoxFor(m => m.Film.Title, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+    @Html.LabelFor(m => m.Film.Director, "Podaj reżysera: ")
+    @Html.TextBoxFor(m => m.Film.Director, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+    @Html.LabelFor(m => m.Film.Desc, "Podaj opis: ")
+    @Html.TextAreaFor(m => m.Film.Desc, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+    @Html.LabelFor(m => m.Film.Price, "Podaj cenę: ")
+    @Html.TextBoxFor(m => m.Film.Price, new { type = "number", step = "0.01", min = "0", @class = "form-control" })
+    </div>
+
+    @foreach (var category in Model.Categories)
+    {
+       <div class = "form-check-input">
+       @Html.RadioButtonFor(m => m.Film.CategoryId, category.Id) 
+       @category.Name
+       </div>
+    }
+
+    <br />
+
+    @Html.TextBoxFor(m => m.Poster, new { type = "file", @class = "form-control-file" })
+
+    <br />
+
+    <button class="btn btn-primary" type="submit">Wyślij</button>
+}
