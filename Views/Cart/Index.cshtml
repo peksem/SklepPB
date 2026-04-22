@@ -1,0 +1,22 @@
+﻿@model IEnumerable<CartItem>
+
+<table class="table">
+    @foreach (var cartItem in Model)
+    {
+        <tr>
+            <td>
+                @cartItem.Film.Title
+            </td>
+            <td>
+                @cartItem.Quantity
+            </td>
+            <td>
+                @cartItem.Value zł
+            </td>
+        </tr>
+    }
+</table>
+
+<div>
+    Razem: @ViewBag.Total zł
+</div>

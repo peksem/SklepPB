@@ -16,6 +16,7 @@
                     <td>@film.Director</td>
                     <td>@film.Price zł</td>
                     <td><a href="@Url.Action("Details", "Films", new {filmId = film.Id })">🧐</a></td>
+                <td><a href="@Url.Action("AddToCart", "Cart", new { id = film.Id })">🛒</a></td>
                 </tr>
             }
     </tbody>
