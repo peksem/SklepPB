@@ -3,20 +3,52 @@
 <table class="table">
     @foreach (var cartItem in Model)
     {
-        <tr>
+        <tr class="cartItem-@cartItem.Film.Id">
             <td>
                 @cartItem.Film.Title
             </td>
-            <td>
+            <td class="itemQuantity-@cartItem.Film.Id">
                 @cartItem.Quantity
             </td>
             <td>
                 @cartItem.Value zł
+            </td>
+            <td>
+                <a href="#" class="trash" data-id="@cartItem.Film.Id">🗑️</a>
             </td>
         </tr>
     }
 </table>
 
 <div>
-    Razem: @ViewBag.Total zł
+    Razem: <span id="totalValue">@ViewBag.Total zł</span>
 </div>
+
+
+
+@section scripts {
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        $(".trash").click(function()
+        {
+            const idCartItem = $(this).data('id');
+
+            if(idCartItem != ''){
+                $.post("/Cart/RemoveFromCart", { "id": idCartItem }, function(response)
+                {
+                    if(response.itemQuantity == 0)
+                    {
+                        $(".cartItem-" + response.itemId).fadeOut("slow");
+                    }
+                    else
+                    {
+                        $(".itemQuantity-" + response.itemId).text(response.itemQuantity);
+                    }
+                $("#totalValue").text(response.cartValue);
+            });
+            }
+        }
+        );
+    </script>
+}

@@ -18,7 +18,9 @@
                     <li>Opis: @Model.Desc</li>
                     <li>Cena: @Model.Price zł</li>
                 </ul>
+                <a style="margin: 0.5rem 0.5rem" class="btn btn-secondary" a href="@Url.Action("AddToCart", "Cart", new { id = Model.Id })">Dodaj do koszyka 🛒</a>
             </td>
+            <td>
         </tr>
     </table>
 </div>
