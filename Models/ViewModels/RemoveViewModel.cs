@@ -7,6 +7,8 @@
         public int itemQuantity { get; set; }
 
         public decimal? cartValue { get; set; }
-    
+
+        public int cartQuantity { get; set; }
+
     }
 }

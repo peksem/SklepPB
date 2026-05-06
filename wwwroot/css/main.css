@@ -9,7 +9,7 @@
     font-size: 1.7rem;
 }
 
-tbody a
+tbody a, .menu-link
 {
     text-decoration: none;
 }

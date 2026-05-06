@@ -68,6 +68,19 @@ namespace SklepPB.Controllers
 
             return RedirectToAction("Index");
         }
+
+        public IActionResult Search(string text)
+        {
+            var films = from f in db.Films select f;
+            if(!String.IsNullOrEmpty(text))
+            {
+                films = films.Where(f => f.Title.ToLower().Contains(text.ToLower()));
+
+                return View("CategoryFilms", films.ToList());
+            }
+
+            return RedirectToAction("Index");
+        }
     }
 }
 

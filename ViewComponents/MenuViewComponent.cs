@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SklepPB.DAL;
+using SklepPB.Infrastructure;
 
 namespace SklepPB.ViewComponents
 {
@@ -14,7 +15,10 @@ namespace SklepPB.ViewComponents
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
+            ViewBag.CartQuantity = CartManager.GetCartQuantity(HttpContext.Session);
+
             return await Task.FromResult(View("_Menu", db.Categories.ToList()));
         }
+
     }
 }

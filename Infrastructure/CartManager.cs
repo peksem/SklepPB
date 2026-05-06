@@ -77,5 +77,12 @@ namespace SklepPB.Infrastructure
             return count;
         }
 
+        public static int GetCartQuantity(ISession session)
+        {
+            var cart = CartManager.GetItems(session);
+
+            return cart.Sum(i => i.Quantity);
+        }
+
     }
 }

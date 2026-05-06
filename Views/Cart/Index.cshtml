@@ -20,9 +20,11 @@
     }
 </table>
 
-<div>
-    Razem: <span id="totalValue">@ViewBag.Total zł</span>
-</div>
+    <div id="message">
+    Razem: <span id="totalValue">@ViewBag.Total </span> zł
+    </div>
+
+
 
 
 
@@ -46,6 +48,13 @@
                         $(".itemQuantity-" + response.itemId).text(response.itemQuantity);
                     }
                 $("#totalValue").text(response.cartValue);
+                $('#cartQuantity').text(response.cartQuantity);
+                if(response.cartQuantity > 0) {
+                    $("#totalValue").text(repsonse.cartValue);
+                }
+                else {
+                    $("#message").text("Twój koszyk jest pusty");
+                }
             });
             }
         }

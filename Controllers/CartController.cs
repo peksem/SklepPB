@@ -34,7 +34,8 @@ namespace SklepPB.Controllers
             {
                 itemId = id,
                 itemQuantity = CartManager.RemoveFromCart(HttpContext.Session, id),
-                cartValue = CartManager.GetCartTotalValue(HttpContext.Session)
+                cartValue = CartManager.GetCartTotalValue(HttpContext.Session),
+                cartQuantity = CartManager.GetCartQuantity(HttpContext.Session)
             };
             
             return Json(model);

@@ -12,5 +12,13 @@
             }
             
         </ul>
+        
+        @using(Html.BeginForm("Search", "Films"))
+        {
+            @Html.TextBox("text");
+            <button type="submit" class="btn btn-secondary">Szukaj🔎</button>
+        }
+
+        <a class="menu-link" href="@Url.Action("Index", "Cart")">🛒(<span id="cartQuantity">@ViewBag.CartQuantity</span>)</a>
     </div>
 </nav>
