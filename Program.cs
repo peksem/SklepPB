@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using SklepPB.DAL;
+using SklepPB.Models.Users;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +8,16 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<FilmsContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("localDB")));
+
+builder.Services.AddDbContext<AccountsContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("localDB")));
+
+builder.Services.AddIdentity<AppUser, AppRole>(options =>
+{
+    options.User.RequireUniqueEmail = true;
+    options.Password.RequiredLength = 4;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireDigit = false;
+}).AddEntityFrameworkStores<AccountsContext>();
 
 builder.Services.AddSession();
 
@@ -24,6 +35,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

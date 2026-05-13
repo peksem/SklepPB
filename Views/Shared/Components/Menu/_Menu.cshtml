@@ -2,23 +2,44 @@
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <div class="container-fluid">
+
+        <!-- Kategorie -->
         <ul class="navbar-nav">
 
             @foreach (var category in Model)
             {
                 <li class="nav-item">
-                    <a class="nav-link" href="@Url.Action("CategoryFilms", "Films", new { categoryName = category.Name })">@category.Name</a>
+                    <a class="nav-link" href="@Url.Action("CategoryFilms", "Films", new { categoryName = category.Name })">
+                        @category.Name
+                    </a>
                 </li>
             }
-            
+
         </ul>
-        
-        @using(Html.BeginForm("Search", "Films"))
+
+        <!-- Wyszukiwarka -->
+        @using (Html.BeginForm("Search", "Films", FormMethod.Get, new { @class = "d-flex" }))
         {
-            @Html.TextBox("text");
-            <button type="submit" class="btn btn-secondary">Szukaj🔎</button>
+            @Html.TextBox("text", null, new { @class = "form-control me-2", placeholder = "Szukaj filmu..." })
+            <button type="submit" class="btn btn-secondary">Szukaj 🔎</button>
         }
 
-        <a class="menu-link" href="@Url.Action("Index", "Cart")">🛒(<span id="cartQuantity">@ViewBag.CartQuantity</span>)</a>
+        <!-- Koszyk + logowanie -->
+        <div class="d-flex align-items-center gap-2">
+
+            <a class="menu-link text-white me-3" href="@Url.Action("Index", "Cart")">
+                🛒(<span id="cartQuantity">@ViewBag.CartQuantity</span>)
+            </a>
+
+            <a class="btn btn-outline-light" href="@Url.Action("Login", "Account")">
+                Zaloguj
+            </a>
+
+            <a class="btn btn-warning" href="@Url.Action("Register", "Account")">
+                Zarejestruj
+            </a>
+
+        </div>
+
     </div>
 </nav>
