@@ -17,3 +17,9 @@ tbody a, .menu-link
 .posters {
     width: 10rem;
 }
+
+.accounts a {
+    margin: 0 1rem;
+    color: white;
+    text-decoration: none;
+}

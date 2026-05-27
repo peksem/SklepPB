@@ -25,21 +25,30 @@
         }
 
         <!-- Koszyk + logowanie -->
-        <div class="d-flex align-items-center gap-2">
+        <ul class="d-flex align-items-center gap-2 accounts">
 
-            <a class="menu-link text-white me-3" href="@Url.Action("Index", "Cart")">
-                🛒(<span id="cartQuantity">@ViewBag.CartQuantity</span>)
-            </a>
+            <li>
+                <a class="btn btn-warning" href="@Url.Action("Register", "Account")">Zarejestruj</a>
+            </li>
+            @if (!User.Identity.IsAuthenticated)
+            {
 
-            <a class="btn btn-outline-light" href="@Url.Action("Login", "Account")">
-                Zaloguj
-            </a>
+                <li>
+                    <a class="btn btn-outline-light" href="@Url.Action("Login", "Account")"> Zaloguj </a>
+                </li>
+            }
+            else
+            {
+                <li>
+                    <a class="btn btn-outline-danger" href="@Url.Action("Logout", "Account")"> @User.Identity.Name, Wyloguj </a>
+                </li>
+            }
 
-            <a class="btn btn-warning" href="@Url.Action("Register", "Account")">
-                Zarejestruj
-            </a>
+        </ul>
 
-        </div>
+        <a class="menu-link text-white me-3" href="@Url.Action("Index", "Cart")">
+            🛒(<span id="cartQuantity">@ViewBag.CartQuantity</span>)
+        </a>
 
     </div>
 </nav>

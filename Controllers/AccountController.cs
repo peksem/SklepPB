@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SklepPB.Models.Users;
+using SklepPB.Models.ViewModels;
 
 namespace SklepPB.Controllers
 {
@@ -20,25 +21,48 @@ namespace SklepPB.Controllers
             return View();
         }
 
-        public async Task<IActionResult> Register()
+        [HttpGet]
+        public IActionResult Register()
         {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterViewModel model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
             try
             {
-                var user = await Usermanager.FindByNameAsync("TestUser2");
+                var user = await Usermanager.FindByNameAsync("model.UserName");
 
                 if (user == null)
                 {
                     user = new AppUser
                     {
-                        UserName = "TestUser2",
-                        FirstName = "Test",
-                        LastName = "User",
-                        Address = "Test Address",
-                        Email = "testuser@gmail2.com"
+                        UserName = model.UserName,
+                        FirstName = model.FirstName,
+                        LastName = model.LastName,
+                        Address = model.Address,
+                        Email = model.Email
                     };
 
-                    await Usermanager.CreateAsync(user, "Test");
-                    ViewBag.Message = "Użytkownik utworzony";
+                    var result = await Usermanager.CreateAsync(user, model.Password);
+
+                    if (result.Succeeded)
+                    {
+                        ViewBag.Message = "Użytkownik utworzony";
+
+                        await Signinmanager.SignInAsync(user, true);
+
+                        return RedirectToAction("Index", "Home");
+                    }
+                    else
+                    {
+                        var errors = string.Join("\n", result.Errors.ToList().Select(e => e.Description));
+
+                        ViewBag.message = "Wystąpiły błędy:\n" + errors;
+                    }
 
                 }
                 else
@@ -51,6 +75,39 @@ namespace SklepPB.Controllers
                 ViewBag.message = "błędy: \n" + e.Message;
             }
                 return View();
+        }
+
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginViewModel model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            var result = await Signinmanager.PasswordSignInAsync(model.UserName, model.Password, true, false);
+
+            if (result.Succeeded)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                ViewBag.message = "Wystąpiły błędy: " + result.ToString();
+            }
+
+            return View();
+        }
+
+
+        public async Task<IActionResult> Logout()
+        {
+            await Signinmanager.SignOutAsync();
+
+            return RedirectToAction("Index", "Home");
         }
     }
 }
