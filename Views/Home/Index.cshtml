@@ -1,5 +1,96 @@
-﻿@{
+@using SklepPB.Models
+@model IEnumerable<Category>
+
+@{
     ViewData["Title"] = "Strona główna";
+    var featuredFilms = ViewBag.FeaturedFilms as List<Film>;
 }
 
+<!-- BANER POWITALNY -->
+<div class="hero-banner rounded-4 mb-5 p-5 text-white text-center"
+     style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); min-height: 280px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    <div style="font-size: 3rem;">🎬</div>
+    <h1 class="display-4 fw-bold mt-2 mb-3">Witaj w SklepPB</h1>
+    <p class="lead mb-4" style="max-width: 600px; opacity: 0.85;">
+        Największy wybór filmów w najlepszych cenach. Przeglądaj kategorie, odkrywaj nowości i buduj swoją kolekcję.
+    </p>
+    <a href="@Url.Action("AllFilms", "Films")" class="btn btn-lg px-5 py-2 fw-semibold"
+       style="background-color: #e94560; border: none; color: white; border-radius: 50px;">
+        Przeglądaj wszystkie filmy
+    </a>
+</div>
 
+<!-- POLECANE FILMY -->
+@if (featuredFilms != null && featuredFilms.Any())
+{
+    <h3 class="fw-bold mb-4">🌟 Polecane filmy</h3>
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-6 g-3 mb-5">
+        @foreach (var film in featuredFilms)
+        {
+            <div class="col">
+                <a href="@Url.Action("Details", "Films", new { filmId = film.Id })" class="text-decoration-none text-dark">
+                    <div class="card h-100 shadow-sm film-card">
+                        <img src="~/content/grafiki/@film.Poster" class="card-img-top film-card-img" alt="@film.Title" />
+                        <div class="card-body p-2">
+                            <h6 class="card-title mb-1 text-truncate" style="font-size: 0.85rem;">@film.Title</h6>
+                            <div class="fw-bold text-success" style="font-size: 0.85rem;">@film.Price zł</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+}
+
+<!-- KATEGORIE -->
+<h3 class="fw-bold mb-4">📂 Kategorie</h3>
+<div class="row row-cols-2 row-cols-md-3 g-3 mb-5">
+    @foreach (var category in Model)
+    {
+        <div class="col">
+            <a href="@Url.Action("CategoryFilms", "Films", new { categoryName = category.Name })" class="text-decoration-none">
+                <div class="card text-center py-4 shadow-sm category-card h-100">
+                    <div class="fs-1 mb-2">
+                        @switch (category.Name)
+                        {
+                            case "Action": <text>💥</text> break;
+                            case "Comedy": <text>😂</text> break;
+                            case "Drama": <text>🎭</text> break;
+                            case "Horror": <text>👻</text> break;
+                            case "Sci-Fi": <text>🚀</text> break;
+                            case "Romance": <text>❤️</text> break;
+                            default: <text>🎬</text> break;
+                        }
+                    </div>
+                    <h5 class="fw-bold mb-1">@category.Name</h5>
+                    <small class="text-muted">@category.Desc</small>
+                </div>
+            </a>
+        </div>
+    }
+</div>
+
+<style>
+    .film-card {
+        transition: transform 0.2s, box-shadow 0.2s;
+        cursor: pointer;
+    }
+    .film-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 16px rgba(0,0,0,0.2) !important;
+    }
+    .film-card-img {
+        height: 160px;
+        object-fit: cover;
+    }
+    .category-card {
+        transition: transform 0.2s, box-shadow 0.2s;
+        cursor: pointer;
+        border-radius: 12px;
+    }
+    .category-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 16px rgba(0,0,0,0.15) !important;
+        background-color: #f8f9fa;
+    }
+</style>

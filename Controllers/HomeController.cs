@@ -18,6 +18,8 @@ namespace SklepPB.Controllers
         public IActionResult Index()
         {
             var categories = db.Categories.ToList();
+            var featuredFilms = db.Films.Where(f => f.Poster != null).OrderBy(f => Guid.NewGuid()).Take(6).ToList();
+            ViewBag.FeaturedFilms = featuredFilms;
 
             return View(categories);
         }
