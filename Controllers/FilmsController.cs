@@ -22,6 +22,12 @@ namespace SklepPB.Controllers
             return View();
         }
 
+        public IActionResult AllFilms()
+        {
+            var films = db.Films.ToList();
+            return View(films);
+        }
+
         public IActionResult CategoryFilms(string categoryName)
         {
             var category = db.Categories.Include(c => c.Films).Where(c => c.Name.ToUpper() == categoryName.ToUpper()).Single();

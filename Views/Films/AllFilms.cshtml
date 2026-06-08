@@ -1,0 +1,49 @@
+@model IEnumerable<Film>
+
+@{
+    ViewData["Title"] = "Wszystkie filmy";
+}
+
+<h2 class="mb-4">Wszystkie filmy</h2>
+
+<div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-4">
+    @foreach (var film in Model)
+    {
+        <div class="col">
+            <a href="@Url.Action("Details", "Films", new { filmId = film.Id })" class="text-decoration-none text-dark">
+                <div class="card h-100 shadow-sm film-card">
+                    @if (!string.IsNullOrEmpty(film.Poster))
+                    {
+                        <img src="~/content/grafiki/@film.Poster" class="card-img-top film-card-img" alt="@film.Title" />
+                    }
+                    else
+                    {
+                        <div class="card-img-top film-card-img bg-secondary d-flex align-items-center justify-content-center">
+                            <span class="text-white fs-1">🎬</span>
+                        </div>
+                    }
+                    <div class="card-body p-2">
+                        <h6 class="card-title mb-1 text-truncate">@film.Title</h6>
+                        <small class="text-muted">@film.Director</small>
+                        <div class="mt-1 fw-bold text-success">@film.Price zł</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    }
+</div>
+
+<style>
+    .film-card {
+        transition: transform 0.2s, box-shadow 0.2s;
+        cursor: pointer;
+    }
+    .film-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 16px rgba(0,0,0,0.2) !important;
+    }
+    .film-card-img {
+        height: 200px;
+        object-fit: cover;
+    }
+</style>
