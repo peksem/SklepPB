@@ -225,6 +225,7 @@ namespace SklepPB.Migrations
                             CategoryId = 1,
                             Desc = "Postapokaliptyczny pościg przez pustynię",
                             Director = "George Miller",
+                            Poster = "1.png",
                             Price = 16.99m,
                             Title = "Mad Max: Fury Road"
                         },
@@ -234,6 +235,7 @@ namespace SklepPB.Migrations
                             CategoryId = 1,
                             Desc = "Były zabójca wraca do gry",
                             Director = "Chad Stahelski",
+                            Poster = "2.png",
                             Price = 14.99m,
                             Title = "John Wick"
                         },
@@ -243,6 +245,7 @@ namespace SklepPB.Migrations
                             CategoryId = 1,
                             Desc = "Policjant kontra terroryści",
                             Director = "John McTiernan",
+                            Poster = "3.png",
                             Price = 12.99m,
                             Title = "Die Hard"
                         },
@@ -252,6 +255,7 @@ namespace SklepPB.Migrations
                             CategoryId = 1,
                             Desc = "Superbohaterowie ratują świat",
                             Director = "Joss Whedon",
+                            Poster = "4.png",
                             Price = 15.99m,
                             Title = "The Avengers"
                         },
@@ -261,6 +265,7 @@ namespace SklepPB.Migrations
                             CategoryId = 1,
                             Desc = "Agent Ethan Hunt w kolejnej misji",
                             Director = "Christopher McQuarrie",
+                            Poster = "5.png",
                             Price = 17.99m,
                             Title = "Mission: Impossible – Fallout"
                         },
@@ -270,6 +275,7 @@ namespace SklepPB.Migrations
                             CategoryId = 1,
                             Desc = "Policyjny szturm na wieżowiec",
                             Director = "Gareth Evans",
+                            Poster = "6.png",
                             Price = 11.99m,
                             Title = "The Raid"
                         },
@@ -279,6 +285,7 @@ namespace SklepPB.Migrations
                             CategoryId = 1,
                             Desc = "James Bond w nowej odsłonie",
                             Director = "Martin Campbell",
+                            Poster = "7.png",
                             Price = 13.99m,
                             Title = "Casino Royale"
                         },
@@ -288,6 +295,7 @@ namespace SklepPB.Migrations
                             CategoryId = 1,
                             Desc = "Dwóch gliniarzy przeciw mafii",
                             Director = "Richard Donner",
+                            Poster = "8.png",
                             Price = 10.99m,
                             Title = "Lethal Weapon"
                         },
@@ -297,6 +305,7 @@ namespace SklepPB.Migrations
                             CategoryId = 1,
                             Desc = "Powrót legendarnego pilota",
                             Director = "Joseph Kosinski",
+                            Poster = "9.png",
                             Price = 18.99m,
                             Title = "Top Gun: Maverick"
                         },
@@ -306,6 +315,7 @@ namespace SklepPB.Migrations
                             CategoryId = 1,
                             Desc = "Bitwa pod Termopilami",
                             Director = "Zack Snyder",
+                            Poster = "10.png",
                             Price = 9.99m,
                             Title = "300"
                         },
@@ -315,6 +325,7 @@ namespace SklepPB.Migrations
                             CategoryId = 2,
                             Desc = "Szkolna komedia o przyjaźni",
                             Director = "Greg Mottola",
+                            Poster = "1.png",
                             Price = 9.99m,
                             Title = "Superbad"
                         },
@@ -324,6 +335,7 @@ namespace SklepPB.Migrations
                             CategoryId = 2,
                             Desc = "Dwóch dorosłych braci pod jednym dachem",
                             Director = "Adam McKay",
+                            Poster = "2.png",
                             Price = 8.99m,
                             Title = "Step Brothers"
                         },
@@ -333,6 +345,7 @@ namespace SklepPB.Migrations
                             CategoryId = 2,
                             Desc = "Magiczna maska zmienia życie bohatera",
                             Director = "Chuck Russell",
+                            Poster = "3.png",
                             Price = 7.99m,
                             Title = "The Mask"
                         },
@@ -342,6 +355,7 @@ namespace SklepPB.Migrations
                             CategoryId = 2,
                             Desc = "Chłopiec kontra włamywacze",
                             Director = "Chris Columbus",
+                            Poster = "4.png",
                             Price = 10.99m,
                             Title = "Home Alone"
                         },
@@ -351,6 +365,7 @@ namespace SklepPB.Migrations
                             CategoryId = 2,
                             Desc = "Dwóch przyjaciół w podróży",
                             Director = "Peter Farrelly",
+                            Poster = "5.png",
                             Price = 6.99m,
                             Title = "Dumb and Dumber"
                         },
@@ -360,6 +375,7 @@ namespace SklepPB.Migrations
                             CategoryId = 2,
                             Desc = "Ekscentryczna komedia hotelowa",
                             Director = "Wes Anderson",
+                            Poster = "6.png",
                             Price = 11.99m,
                             Title = "The Grand Budapest Hotel"
                         },
@@ -369,6 +385,7 @@ namespace SklepPB.Migrations
                             CategoryId = 2,
                             Desc = "Tajniacy w liceum",
                             Director = "Phil Lord & Christopher Miller",
+                            Poster = "7.png",
                             Price = 9.49m,
                             Title = "21 Jump Street"
                         },
@@ -378,6 +395,7 @@ namespace SklepPB.Migrations
                             CategoryId = 2,
                             Desc = "Prezenter wiadomości w krzywym zwierciadle",
                             Director = "Adam McKay",
+                            Poster = "8.png",
                             Price = 8.49m,
                             Title = "Anchorman"
                         },
@@ -387,6 +405,7 @@ namespace SklepPB.Migrations
                             CategoryId = 2,
                             Desc = "Senior stażystą w startupie",
                             Director = "Nancy Meyers",
+                            Poster = "9.png",
                             Price = 10.49m,
                             Title = "The Intern"
                         },
@@ -396,6 +415,7 @@ namespace SklepPB.Migrations
                             CategoryId = 2,
                             Desc = "Druhenki w tarapatach",
                             Director = "Paul Feig",
+                            Poster = "10.png",
                             Price = 9.49m,
                             Title = "Bridesmaids"
                         },
@@ -405,6 +425,7 @@ namespace SklepPB.Migrations
                             CategoryId = 3,
                             Desc = "Strażnik więzienny i niezwykły skazaniec",
                             Director = "Frank Darabont",
+                            Poster = "1.png",
                             Price = 12.99m,
                             Title = "The Green Mile"
                         },
@@ -414,6 +435,7 @@ namespace SklepPB.Migrations
                             CategoryId = 3,
                             Desc = "Podziemny klub walki",
                             Director = "David Fincher",
+                            Poster = "2.png",
                             Price = 11.99m,
                             Title = "Fight Club"
                         },
@@ -423,6 +445,7 @@ namespace SklepPB.Migrations
                             CategoryId = 3,
                             Desc = "Historia mafijnej rodziny",
                             Director = "Francis Ford Coppola",
+                            Poster = "3.png",
                             Price = 14.99m,
                             Title = "The Godfather"
                         },
@@ -432,6 +455,7 @@ namespace SklepPB.Migrations
                             CategoryId = 3,
                             Desc = "Historia genialnego matematyka",
                             Director = "Ron Howard",
+                            Poster = "4.png",
                             Price = 10.99m,
                             Title = "A Beautiful Mind"
                         },
@@ -441,6 +465,7 @@ namespace SklepPB.Migrations
                             CategoryId = 3,
                             Desc = "Ambicja młodego perkusisty",
                             Director = "Damien Chazelle",
+                            Poster = "5.png",
                             Price = 9.99m,
                             Title = "Whiplash"
                         },
@@ -450,6 +475,7 @@ namespace SklepPB.Migrations
                             CategoryId = 3,
                             Desc = "Narodziny złoczyńcy",
                             Director = "Todd Phillips",
+                            Poster = "6.png",
                             Price = 13.99m,
                             Title = "Joker"
                         },
@@ -459,6 +485,7 @@ namespace SklepPB.Migrations
                             CategoryId = 3,
                             Desc = "Losy pianisty w czasie wojny",
                             Director = "Roman Polanski",
+                            Poster = "7.png",
                             Price = 11.49m,
                             Title = "The Pianist"
                         },
@@ -468,6 +495,7 @@ namespace SklepPB.Migrations
                             CategoryId = 3,
                             Desc = "Konflikt dwóch rodzin",
                             Director = "Bong Joon-ho",
+                            Poster = "8.png",
                             Price = 12.49m,
                             Title = "Parasite"
                         },
@@ -477,6 +505,7 @@ namespace SklepPB.Migrations
                             CategoryId = 3,
                             Desc = "Historia powstania Facebooka",
                             Director = "David Fincher",
+                            Poster = "9.png",
                             Price = 10.49m,
                             Title = "The Social Network"
                         },
@@ -486,6 +515,7 @@ namespace SklepPB.Migrations
                             CategoryId = 3,
                             Desc = "Historia bezwzględnego przedsiębiorcy",
                             Director = "Paul Thomas Anderson",
+                            Poster = "10.png",
                             Price = 12.99m,
                             Title = "There Will Be Blood"
                         },
@@ -495,6 +525,7 @@ namespace SklepPB.Migrations
                             CategoryId = 4,
                             Desc = "Mroczna tajemnica rodziny",
                             Director = "Ari Aster",
+                            Poster = "1.png",
                             Price = 11.99m,
                             Title = "Hereditary"
                         },
@@ -504,6 +535,7 @@ namespace SklepPB.Migrations
                             CategoryId = 4,
                             Desc = "Dzieci kontra klaun",
                             Director = "Andy Muschietti",
+                            Poster = "2.png",
                             Price = 10.99m,
                             Title = "It"
                         },
@@ -513,6 +545,7 @@ namespace SklepPB.Migrations
                             CategoryId = 4,
                             Desc = "Koszmar z Freddy'm",
                             Director = "Wes Craven",
+                            Poster = "3.png",
                             Price = 8.99m,
                             Title = "A Nightmare on Elm Street"
                         },
@@ -522,6 +555,7 @@ namespace SklepPB.Migrations
                             CategoryId = 4,
                             Desc = "Egzorcyzmy młodej dziewczyny",
                             Director = "William Friedkin",
+                            Poster = "4.png",
                             Price = 9.99m,
                             Title = "The Exorcist"
                         },
@@ -531,6 +565,7 @@ namespace SklepPB.Migrations
                             CategoryId = 4,
                             Desc = "Tajemnicza kaseta wideo",
                             Director = "Gore Verbinski",
+                            Poster = "5.png",
                             Price = 8.49m,
                             Title = "The Ring"
                         },
@@ -540,6 +575,7 @@ namespace SklepPB.Migrations
                             CategoryId = 4,
                             Desc = "Potwór z dziecięcej książki",
                             Director = "Jennifer Kent",
+                            Poster = "6.png",
                             Price = 7.99m,
                             Title = "The Babadook"
                         },
@@ -549,6 +585,7 @@ namespace SklepPB.Migrations
                             CategoryId = 4,
                             Desc = "Rodzina nawiedzana przez duchy",
                             Director = "James Wan",
+                            Poster = "7.png",
                             Price = 9.49m,
                             Title = "Insidious"
                         },
@@ -558,6 +595,7 @@ namespace SklepPB.Migrations
                             CategoryId = 4,
                             Desc = "Pisarz odkrywa przerażające nagrania",
                             Director = "Scott Derrickson",
+                            Poster = "8.png",
                             Price = 8.49m,
                             Title = "Sinister"
                         },
@@ -567,6 +605,7 @@ namespace SklepPB.Migrations
                             CategoryId = 4,
                             Desc = "Rodzina w obliczu mrocznych sił",
                             Director = "Robert Eggers",
+                            Poster = "9.png",
                             Price = 9.99m,
                             Title = "The Witch"
                         },
@@ -576,6 +615,7 @@ namespace SklepPB.Migrations
                             CategoryId = 4,
                             Desc = "Niepokojący festiwal w Szwecji",
                             Director = "Ari Aster",
+                            Poster = "10.png",
                             Price = 12.49m,
                             Title = "Midsommar"
                         },
@@ -585,6 +625,7 @@ namespace SklepPB.Migrations
                             CategoryId = 5,
                             Desc = "Podróż międzygwiezdna",
                             Director = "Christopher Nolan",
+                            Poster = "1.png",
                             Price = 17.99m,
                             Title = "Interstellar"
                         },
@@ -594,6 +635,7 @@ namespace SklepPB.Migrations
                             CategoryId = 5,
                             Desc = "Łowca androidów",
                             Director = "Denis Villeneuve",
+                            Poster = "2.png",
                             Price = 14.99m,
                             Title = "Blade Runner 2049"
                         },
@@ -603,6 +645,7 @@ namespace SklepPB.Migrations
                             CategoryId = 5,
                             Desc = "Kontakt z obcą cywilizacją",
                             Director = "Denis Villeneuve",
+                            Poster = "3.png",
                             Price = 12.99m,
                             Title = "Arrival"
                         },
@@ -612,6 +655,7 @@ namespace SklepPB.Migrations
                             CategoryId = 5,
                             Desc = "Początek kosmicznej sagi",
                             Director = "George Lucas",
+                            Poster = "4.png",
                             Price = 13.99m,
                             Title = "Star Wars: A New Hope"
                         },
@@ -621,6 +665,7 @@ namespace SklepPB.Migrations
                             CategoryId = 5,
                             Desc = "Cyborg z przyszłości",
                             Director = "James Cameron",
+                            Poster = "5.png",
                             Price = 10.99m,
                             Title = "The Terminator"
                         },
@@ -630,6 +675,7 @@ namespace SklepPB.Migrations
                             CategoryId = 5,
                             Desc = "Konflikt na planecie Pandora",
                             Director = "James Cameron",
+                            Poster = "6.png",
                             Price = 15.99m,
                             Title = "Avatar"
                         },
@@ -639,6 +685,7 @@ namespace SklepPB.Migrations
                             CategoryId = 5,
                             Desc = "Eksperyment ze sztuczną inteligencją",
                             Director = "Alex Garland",
+                            Poster = "7.png",
                             Price = 9.99m,
                             Title = "Ex Machina"
                         },
@@ -648,6 +695,7 @@ namespace SklepPB.Migrations
                             CategoryId = 5,
                             Desc = "Walka o pustynną planetę",
                             Director = "Denis Villeneuve",
+                            Poster = "8.png",
                             Price = 16.99m,
                             Title = "Dune"
                         },
@@ -657,6 +705,7 @@ namespace SklepPB.Migrations
                             CategoryId = 5,
                             Desc = "Pętla czasowa w wojnie z obcymi",
                             Director = "Doug Liman",
+                            Poster = "9.png",
                             Price = 11.99m,
                             Title = "Edge of Tomorrow"
                         },
@@ -666,6 +715,7 @@ namespace SklepPB.Migrations
                             CategoryId = 5,
                             Desc = "Walka o przetrwanie w kosmosie",
                             Director = "Alfonso Cuarón",
+                            Poster = "10.png",
                             Price = 10.99m,
                             Title = "Gravity"
                         },
@@ -675,6 +725,7 @@ namespace SklepPB.Migrations
                             CategoryId = 6,
                             Desc = "Romantyczna historia miłosna",
                             Director = "Nick Cassavetes",
+                            Poster = "1.png",
                             Price = 9.99m,
                             Title = "The Notebook"
                         },
@@ -684,6 +735,7 @@ namespace SklepPB.Migrations
                             CategoryId = 6,
                             Desc = "Miłość i konwenanse",
                             Director = "Joe Wright",
+                            Poster = "2.png",
                             Price = 8.99m,
                             Title = "Pride & Prejudice"
                         },
@@ -693,6 +745,7 @@ namespace SklepPB.Migrations
                             CategoryId = 6,
                             Desc = "Miłość i marzenia w Los Angeles",
                             Director = "Damien Chazelle",
+                            Poster = "3.png",
                             Price = 12.99m,
                             Title = "La La Land"
                         },
@@ -702,6 +755,7 @@ namespace SklepPB.Migrations
                             CategoryId = 6,
                             Desc = "Romantyczna noc w Wiedniu",
                             Director = "Richard Linklater",
+                            Poster = "4.png",
                             Price = 7.99m,
                             Title = "Before Sunrise"
                         },
@@ -711,6 +765,7 @@ namespace SklepPB.Migrations
                             CategoryId = 6,
                             Desc = "Miłość w trudnych okolicznościach",
                             Director = "Thea Sharrock",
+                            Poster = "5.png",
                             Price = 8.49m,
                             Title = "Me Before You"
                         },
@@ -720,6 +775,7 @@ namespace SklepPB.Migrations
                             CategoryId = 6,
                             Desc = "Romans z gwiazdą filmową",
                             Director = "Roger Michell",
+                            Poster = "6.png",
                             Price = 9.49m,
                             Title = "Notting Hill"
                         },
@@ -729,6 +785,7 @@ namespace SklepPB.Migrations
                             CategoryId = 6,
                             Desc = "Miłość i muzyka",
                             Director = "Bradley Cooper",
+                            Poster = "7.png",
                             Price = 11.99m,
                             Title = "A Star Is Born"
                         },
@@ -738,6 +795,7 @@ namespace SklepPB.Migrations
                             CategoryId = 6,
                             Desc = "Miłość dwojga nastolatków",
                             Director = "Josh Boone",
+                            Poster = "8.png",
                             Price = 8.99m,
                             Title = "The Fault in Our Stars"
                         },
@@ -747,6 +805,7 @@ namespace SklepPB.Migrations
                             CategoryId = 6,
                             Desc = "Miłosne perypetie kilku par",
                             Director = "Glenn Ficarra & John Requa",
+                            Poster = "9.png",
                             Price = 9.99m,
                             Title = "Crazy, Stupid, Love"
                         },
@@ -756,6 +815,7 @@ namespace SklepPB.Migrations
                             CategoryId = 6,
                             Desc = "Kilka historii miłosnych",
                             Director = "Richard Curtis",
+                            Poster = "10.png",
                             Price = 10.49m,
                             Title = "Love Actually"
                         });
