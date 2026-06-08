@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using SklepPB.Infrastructure;
 using SklepPB.Models.Users;
 using SklepPB.Models.ViewModels;
 
@@ -88,10 +89,16 @@ namespace SklepPB.Controllers
         {
             if (!ModelState.IsValid) return View(model);
 
+            // Zapisz koszyk przed zalogowaniem (sesja zostanie zresetowana)
+            var cartBackup = CartManager.GetItems(HttpContext.Session);
+
             var result = await Signinmanager.PasswordSignInAsync(model.UserName, model.Password, true, false);
 
             if (result.Succeeded)
             {
+                // Przywróć koszyk po zalogowaniu
+                SessionHelper.SetObjectAsJson(HttpContext.Session, Consts.CartSessionKey, cartBackup);
+
                 return RedirectToAction("Index", "Home");
             }
             else
@@ -105,7 +112,13 @@ namespace SklepPB.Controllers
 
         public async Task<IActionResult> Logout()
         {
+            // Zapisz koszyk przed wylogowaniem
+            var cartBackup = CartManager.GetItems(HttpContext.Session);
+
             await Signinmanager.SignOutAsync();
+
+            // Przywróć koszyk po wylogowaniu
+            SessionHelper.SetObjectAsJson(HttpContext.Session, Consts.CartSessionKey, cartBackup);
 
             return RedirectToAction("Index", "Home");
         }
