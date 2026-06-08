@@ -34,7 +34,7 @@ namespace SklepPB.Controllers
 
             try
             {
-                var user = await Usermanager.FindByNameAsync("model.UserName");
+                var user = await Usermanager.FindByNameAsync(model.UserName);
 
                 if (user == null)
                 {

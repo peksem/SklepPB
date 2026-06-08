@@ -60,16 +60,15 @@ namespace SklepPB.Controllers
         {
             var picFolder = Path.Combine(hostEnvironment.WebRootPath, "content", "grafiki");
 
-            var posterName = Guid.NewGuid() + "_" + model.Poster.FileName;
-
-            var filePath = Path.Combine(picFolder, posterName);
-
-            model.Poster.CopyTo(new FileStream(filePath, FileMode.Create));
-
-            model.Film.Poster = posterName;
+            if (model.Poster != null && model.Poster.Length > 0)
+            {
+                var posterName = Guid.NewGuid() + "_" + model.Poster.FileName;
+                var filePath = Path.Combine(picFolder, posterName);
+                model.Poster.CopyTo(new FileStream(filePath, FileMode.Create));
+                model.Film.Poster = posterName;
+            }
 
             db.Films.Add(model.Film);
-
             db.SaveChanges();
 
             return RedirectToAction("Index");
